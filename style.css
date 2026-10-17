@@ -1,0 +1,643 @@
+/* ======================================================
+   CONNECT GYM — design tokens
+   ====================================================== */
+:root{
+  --bg:            #0D1210;
+  --bg-alt:        #10201A;
+  --surface:       #16211D;
+  --surface-2:     #1C2A24;
+  --line:          #2B3A33;
+
+  --text:          #ECEFED;
+  --text-muted:    #9AA39D;
+
+  --accent:        #FF5A36;   /* coral — energia, CTA */
+  --accent-dim:    #C7431F;
+  --link:          #33C7A6;   /* verde-água — "conexão" */
+
+  --font-display:  'Bebas Neue', sans-serif;
+  --font-body:     'Inter', sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
+
+  --radius: 3px;
+  --max: 1180px;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+}
+
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+img{ max-width:100%; display:block; }
+
+:focus-visible{
+  outline:2px solid var(--link);
+  outline-offset:3px;
+}
+
+h1,h2,h3{ font-family:var(--font-display); letter-spacing:0.5px; text-transform:uppercase; }
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:0.75rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--link);
+  margin-bottom:0.75rem;
+}
+
+/* ======================================================
+   Background canvas — signature "connection" motif
+   ====================================================== */
+#node-bg{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  opacity:0.5;
+  pointer-events:none;
+}
+
+/* ======================================================
+   Nav
+   ====================================================== */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(13,18,16,0.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:1rem 1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+}
+.logo{
+  font-family:var(--font-display);
+  font-size:1.4rem;
+  letter-spacing:1px;
+}
+.logo span{ color:var(--accent); }
+
+.nav-links{
+  display:flex;
+  gap:1.75rem;
+  flex:1;
+  justify-content:center;
+  font-size:0.92rem;
+  font-weight:500;
+}
+.nav-links a{
+  position:relative;
+  padding:0.25rem 0;
+  color:var(--text-muted);
+  transition:color 0.2s ease;
+}
+.nav-links a:hover{ color:var(--text); }
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0; bottom:-2px;
+  width:0; height:1px;
+  background:var(--link);
+  transition:width 0.25s ease;
+}
+.nav-links a:hover::after{ width:100%; }
+
+.nav-insta{
+  font-size:0.88rem;
+  color:var(--text-muted);
+  white-space:nowrap;
+  transition:color 0.2s ease;
+}
+.nav-insta:hover{ color:var(--link); }
+
+.nav-cta{ white-space:nowrap; }
+
+.burger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:0.4rem;
+}
+.burger span{
+  width:22px; height:2px;
+  background:var(--text);
+  display:block;
+}
+
+/* ======================================================
+   Buttons
+   ====================================================== */
+.btn{
+  display:inline-block;
+  padding:0.85rem 1.6rem;
+  font-weight:700;
+  font-size:0.9rem;
+  letter-spacing:0.03em;
+  border-radius:var(--radius);
+  border:1px solid transparent;
+  transition:transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+  cursor:pointer;
+}
+.btn:hover{ transform:translateY(-2px); }
+
+.btn-accent{
+  background:var(--accent);
+  color:#160D0A;
+}
+.btn-accent:hover{ background:#ff6b4a; }
+
+.btn-ghost{
+  background:transparent;
+  border-color:var(--line);
+  color:var(--text);
+}
+.btn-ghost:hover{ border-color:var(--link); color:var(--link); }
+
+/* ======================================================
+   Hero
+   ====================================================== */
+.hero{
+  position:relative;
+  z-index:1;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:5.5rem 1.5rem 3rem;
+}
+.hero-inner{ max-width:760px; }
+
+.hero-title{
+  font-size:clamp(3rem, 8vw, 6rem);
+  line-height:0.95;
+  margin-bottom:1.5rem;
+}
+.text-outline{
+  color:transparent;
+  -webkit-text-stroke:2px var(--accent);
+}
+
+.hero-sub{
+  max-width:520px;
+  color:var(--text-muted);
+  font-size:1.05rem;
+  margin-bottom:2.25rem;
+}
+
+.hero-actions{ display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:4rem; }
+
+.hero-stats{
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  flex-wrap:wrap;
+  padding-top:2.5rem;
+  border-top:1px solid var(--line);
+}
+.stat{ display:flex; flex-direction:column; }
+.stat-text{
+  font-family:var(--font-mono);
+  font-size:1.25rem;
+  font-weight:700;
+  line-height:1.25;
+  color:var(--text);
+}
+.stat-num, .stat-plus{
+  font-family:var(--font-mono);
+  font-size:2.25rem;
+  font-weight:700;
+  color:var(--text);
+  display:inline;
+}
+.stat-plus{ color:var(--accent); }
+.stat-label{
+  font-size:0.82rem;
+  color:var(--text-muted);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+.node-divider{
+  width:34px; height:1px;
+  background:var(--line);
+  position:relative;
+  flex-shrink:0;
+}
+.node-divider::before, .node-divider::after{
+  content:'';
+  position:absolute;
+  top:50%; transform:translateY(-50%);
+  width:5px; height:5px;
+  border-radius:50%;
+  background:var(--link);
+}
+.node-divider::before{ left:-2px; }
+.node-divider::after{ right:-2px; }
+
+/* ======================================================
+   Sections (shared)
+   ====================================================== */
+.section{
+  position:relative;
+  z-index:1;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:5rem 1.5rem;
+}
+.section-dark{
+  max-width:none;
+  background:var(--bg-alt);
+}
+.section-dark > *{
+  max-width:var(--max);
+  margin-left:auto;
+  margin-right:auto;
+}
+.section-head{ margin-bottom:2.75rem; max-width:640px; }
+.section-head h2{ font-size:clamp(1.8rem, 4vw, 2.6rem); }
+
+/* ======================================================
+   Sobre
+   ====================================================== */
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:3rem;
+}
+.about-text{ color:var(--text-muted); font-size:1.05rem; }
+.about-list li{
+  padding:0.9rem 0;
+  border-bottom:1px solid var(--line);
+  color:var(--text-muted);
+}
+.about-list li:first-child{ padding-top:0; }
+.about-list strong{ color:var(--text); }
+
+/* ======================================================
+   Cards / Modalidades
+   ====================================================== */
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.25rem;
+}
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:1.75rem;
+  transition:border-color 0.2s ease, transform 0.2s ease;
+}
+.card:hover{ border-color:var(--link); transform:translateY(-4px); }
+.card-node{
+  font-family:var(--font-mono);
+  color:var(--link);
+  font-size:0.85rem;
+}
+.card h3{ margin:0.9rem 0 0.6rem; font-size:1.3rem; }
+.card p{ color:var(--text-muted); font-size:0.94rem; }
+
+/* ======================================================
+   Planos
+   ====================================================== */
+.plans-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.25rem;
+  align-items:stretch;
+}
+.plan{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:2rem;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  position:relative;
+}
+.plan h3{ font-size:1.4rem; }
+.plan-price{
+  font-family:var(--font-mono);
+  font-size:2.4rem;
+  font-weight:700;
+}
+.plan-price span{ font-size:1rem; color:var(--text-muted); font-weight:500; }
+.plan ul{ flex:1; display:flex; flex-direction:column; gap:0.6rem; }
+.plan ul li{
+  color:var(--text-muted);
+  font-size:0.92rem;
+  padding-left:1.1rem;
+  position:relative;
+}
+.plan ul li::before{
+  content:'';
+  position:absolute; left:0; top:0.5em;
+  width:5px; height:5px;
+  border-radius:50%;
+  background:var(--link);
+}
+.plan-featured{
+  border-color:var(--accent);
+  background:var(--surface-2);
+  transform:scale(1.03);
+}
+.plan-tag{
+  position:absolute;
+  top:-12px; left:2rem;
+  background:var(--accent);
+  color:#160D0A;
+  font-size:0.72rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  padding:0.3rem 0.7rem;
+  border-radius:2px;
+}
+
+/* ======================================================
+   Tabela de preços
+   ====================================================== */
+.pricing-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:720px;
+  font-size:0.92rem;
+}
+.pricing-table th, .pricing-table td{
+  padding:0.9rem 1rem;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+  white-space:nowrap;
+}
+.pricing-table thead th{
+  font-family:var(--font-mono);
+  color:var(--link);
+  text-transform:uppercase;
+  font-size:0.72rem;
+  letter-spacing:0.05em;
+}
+.pricing-table tbody td:first-child{
+  color:var(--text-muted);
+  font-weight:600;
+}
+.pricing-table tbody td:not(:first-child){
+  font-family:var(--font-mono);
+  font-weight:600;
+}
+.table-note{
+  display:block;
+  font-size:0.7rem;
+  color:var(--text-muted);
+  font-weight:400;
+}
+
+.convenio-card{
+  margin-top:2.5rem;
+  background:var(--surface);
+  border:1px solid var(--accent);
+  border-radius:var(--radius);
+  padding:1.75rem 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+.convenio-card h3{ font-size:1.15rem; text-transform:none; margin:0.5rem 0 0.4rem; }
+.convenio-card p{ color:var(--text-muted); font-size:0.9rem; max-width:420px; }
+.convenio-price{
+  font-family:var(--font-mono);
+  font-size:2.4rem;
+  font-weight:700;
+  color:var(--accent);
+  white-space:nowrap;
+}
+.convenio-price span{ font-size:1.1rem; }
+
+/* ======================================================
+   Horarios (atendimento)
+   ====================================================== */
+.hours-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.25rem;
+}
+.hours-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:2rem 1.5rem;
+  text-align:center;
+}
+.hours-card h3{
+  font-size:1.1rem;
+  text-transform:none;
+  color:var(--text-muted);
+  margin-bottom:0.6rem;
+}
+.hours-time{
+  font-family:var(--font-mono);
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--link);
+}
+
+/* ======================================================
+   Equipe
+   ====================================================== */
+.team-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2.5rem;
+  align-items:center;
+}
+.team-photo{
+  width:100%;
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+}
+.team-text{ color:var(--text-muted); font-size:1.05rem; }
+
+.placeholder-note{
+  color:var(--text-muted);
+  font-style:italic;
+  font-size:0.88rem;
+}
+.footer-links{ margin-bottom:0.6rem; }
+.footer-links a{ color:var(--link); font-size:0.9rem; }
+.footer-links a:hover{ text-decoration:underline; }
+
+/* ======================================================
+   Horarios (legado — mantido para compatibilidade)
+   ====================================================== */
+.table-wrap{ overflow-x:auto; }
+.schedule{
+  width:100%;
+  border-collapse:collapse;
+  min-width:560px;
+  font-size:0.92rem;
+}
+.schedule th, .schedule td{
+  padding:0.9rem 1rem;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+.schedule thead th{
+  font-family:var(--font-mono);
+  color:var(--link);
+  text-transform:uppercase;
+  font-size:0.75rem;
+  letter-spacing:0.06em;
+}
+.schedule tbody td:first-child{
+  font-family:var(--font-mono);
+  color:var(--text-muted);
+}
+.schedule-note{
+  margin-top:1.25rem;
+  color:var(--text-muted);
+  font-size:0.9rem;
+}
+
+/* ======================================================
+   Depoimentos
+   ====================================================== */
+.testimonials{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.25rem;
+}
+.testimonial{
+  background:var(--surface);
+  border-left:2px solid var(--accent);
+  border-radius:var(--radius);
+  padding:1.75rem;
+}
+.testimonial p{ font-size:1rem; margin-bottom:1rem; }
+.testimonial cite{
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  color:var(--text-muted);
+  font-style:normal;
+}
+
+/* ======================================================
+   Contato
+   ====================================================== */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:3rem;
+}
+.contact-form{ display:flex; flex-direction:column; gap:1.1rem; }
+.contact-form label{
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+  font-size:0.85rem;
+  color:var(--text-muted);
+}
+.contact-form input, .contact-form textarea{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:0.8rem 1rem;
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:0.95rem;
+  resize:vertical;
+}
+.contact-form input:focus, .contact-form textarea:focus{
+  outline:none;
+  border-color:var(--link);
+}
+.contact-form button{ align-self:flex-start; }
+.form-status{
+  font-size:0.85rem;
+  color:var(--link);
+  min-height:1.2em;
+}
+
+.contact-info{ display:flex; flex-direction:column; gap:1.75rem; }
+.contact-info h3{
+  font-size:1rem;
+  color:var(--link);
+  margin-bottom:0.4rem;
+  letter-spacing:0.02em;
+}
+.contact-info p{ color:var(--text-muted); font-size:0.95rem; }
+
+/* ======================================================
+   Footer
+   ====================================================== */
+.footer{
+  position:relative;
+  z-index:1;
+  text-align:center;
+  padding:3rem 1.5rem 2.5rem;
+}
+.node-divider-footer{
+  width:60px;
+  margin:0 auto 1.5rem;
+}
+.footer-logo{ font-size:1.2rem; margin-bottom:0.5rem; }
+.footer-note{ color:var(--text-muted); font-size:0.82rem; }
+
+/* ======================================================
+   Responsive
+   ====================================================== */
+@media (max-width: 900px){
+  .nav-links{ display:none; }
+  .burger{ display:flex; }
+  .nav-cta{ display:none; }
+
+  .nav.menu-open .nav-links{
+    display:flex;
+    position:absolute;
+    top:100%; left:0; right:0;
+    background:var(--bg);
+    flex-direction:column;
+    padding:1.5rem;
+    border-bottom:1px solid var(--line);
+    gap:1.25rem;
+  }
+
+  .about-grid, .contact-grid, .team-grid{ grid-template-columns:1fr; }
+  .cards-grid{ grid-template-columns:repeat(2, 1fr); }
+  .plans-grid{ grid-template-columns:1fr; }
+  .plan-featured{ transform:none; }
+  .testimonials{ grid-template-columns:1fr; }
+  .hours-grid{ grid-template-columns:1fr; }
+  .nav-insta{ display:none; }
+  .convenio-card{ flex-direction:column; align-items:flex-start; text-align:left; }
+}
+
+@media (max-width: 560px){
+  .cards-grid{ grid-template-columns:1fr; }
+  .hero-stats{ gap:1rem; }
+  .node-divider{ display:none; }
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect Gym — Treine. Conecte-se. Evolua.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="node-bg"></canvas>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">CONNECT<span>·</span>GYM</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#sobre">Sobre</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#planos">Planos</a>
+      <a href="#horarios">Horários</a>
+      <a href="#depoimentos">Alunos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="https://www.instagram.com/connectgym_" target="_blank" rel="noopener" class="nav-insta" aria-label="Instagram da Connect Gym">Instagram</a>
+    <a href="#planos" class="btn btn-accent nav-cta">Matricule-se</a>
+    <button class="burger" id="burger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <p class="eyebrow">Seg a Sex 5h–22h · Sáb 7h30–14h · Dom 9h–12h</p>
+    <h1 class="hero-title">
+      SUA REDE<br>
+      DE <span class="text-outline">FORÇA</span><br>
+      COMEÇA AQUI
+    </h1>
+    <p class="hero-sub">
+      Treino, comunidade e resultado no mesmo lugar. Na Connect Gym cada
+      treino conecta você a uma versão mais forte de si mesmo — e a gente
+      te acompanha em cada nó dessa jornada.
+    </p>
+    <div class="hero-actions">
+      <a href="#planos" class="btn btn-accent">Quero treinar</a>
+      <a href="#modalidades" class="btn btn-ghost">Ver modalidades</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num" data-count="500">0</span><span class="stat-plus">+</span>
+      <span class="stat-label">alunos ativos</span>
+    </div>
+    <div class="node-divider" aria-hidden="true"></div>
+    <div class="stat">
+      <span class="stat-num" data-count="6">0</span>
+      <span class="stat-label">opções de plano</span>
+    </div>
+    <div class="node-divider" aria-hidden="true"></div>
+    <div class="stat">
+      <span class="stat-text">Musculação<br>+ Runners</span>
+      <span class="stat-label">no mesmo lugar</span>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="section" id="sobre">
+  <div class="section-head">
+    <p class="eyebrow">Sobre a Connect Gym</p>
+    <h2>Treino sério, ambiente que puxa junto</h2>
+  </div>
+  <div class="about-grid">
+    <p class="about-text">
+      A Connect Gym nasceu de uma ideia simples: evolução física acontece
+      mais rápido quando você não treina sozinho. Nossa estrutura reúne
+      equipamentos de última geração, professores presentes de verdade e
+      uma comunidade que comemora cada conquista junto com você — do
+      primeiro treino ao recorde pessoal.
+    </p>
+    <ul class="about-list">
+      <li><strong>Equipe presente</strong> — professores acompanham cada treino, não só na matrícula.</li>
+      <li><strong>Estrutura completa</strong> — musculação, funcional, área de lutas e estúdio de aulas coletivas.</li>
+      <li><strong>Comunidade real</strong> — desafios mensais e grupo de alunos conectados fora da academia.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MODALIDADES -->
+<section class="section section-dark" id="modalidades">
+  <div class="section-head">
+    <p class="eyebrow">Modalidades</p>
+    <h2>Escolha seu ponto de conexão</h2>
+  </div>
+  <div class="cards-grid">
+    <article class="card">
+      <span class="card-node">01</span>
+      <h3>Musculação Livre</h3>
+      <p>Acesso completo à área de musculação, com equipamentos de linha completa e horário flexível.</p>
+    </article>
+    <article class="card">
+      <span class="card-node">02</span>
+      <h3>3x na Semana</h3>
+      <p>Pra quem quer treinar com frequência definida, com condição especial de mensalidade.</p>
+    </article>
+    <article class="card">
+      <span class="card-node">03</span>
+      <h3>Musculação Família</h3>
+      <p>Plano pensado pra treinar em família, com valores reduzidos por integrante.</p>
+    </article>
+    <article class="card">
+      <span class="card-node">04</span>
+      <h3>Runners</h3>
+      <p>Programa voltado a corredores, com estrutura e acompanhamento pra evoluir na corrida.</p>
+    </article>
+    <article class="card">
+      <span class="card-node">05</span>
+      <h3>Runners + Musculação</h3>
+      <p>O combo completo: treino de corrida e musculação livre no mesmo plano.</p>
+    </article>
+    <article class="card">
+      <span class="card-node">06</span>
+      <h3>Convênio Empresarial</h3>
+      <p>Condição especial de musculação livre para empresas parceiras da Connect Gym.</p>
+    </article>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="section" id="planos">
+  <div class="section-head">
+    <p class="eyebrow">Planos</p>
+    <h2>Um plano pra cada tipo de conexão</h2>
+  </div>
+  <div class="table-wrap">
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Período</th>
+          <th>Musculação Livre</th>
+          <th>3x na Semana</th>
+          <th>Musculação Família</th>
+          <th>Runners</th>
+          <th>Runners + Musculação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mensal</td>
+          <td>R$ 115,00</td>
+          <td>R$ 94,90</td>
+          <td>R$ 99,90</td>
+          <td>R$ 119,90</td>
+          <td>R$ 185,90</td>
+        </tr>
+        <tr>
+          <td>Trimestral <span class="table-note">(por mês)</span></td>
+          <td>R$ 104,00</td>
+          <td>R$ 84,90</td>
+          <td>R$ 94,90</td>
+          <td>R$ 113,90</td>
+          <td>R$ 176,60</td>
+        </tr>
+        <tr>
+          <td>Semestral <span class="table-note">(por mês)</span></td>
+          <td>R$ 94,00</td>
+          <td>R$ 74,90</td>
+          <td>R$ 84,90</td>
+          <td>R$ 107,91</td>
+          <td>R$ 167,30</td>
+        </tr>
+        <tr>
+          <td>Anual <span class="table-note">(por mês)</span></td>
+          <td>R$ 84,00</td>
+          <td>R$ 74,90</td>
+          <td>R$ 80,90</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="schedule-note">Pacotes de 3, 6 e 12 meses parcelados no cartão de crédito ou à vista.</p>
+
+  <div class="convenio-card">
+    <div>
+      <span class="plan-tag">Convênio</span>
+      <h3>Musculação Livre para empresas parceiras</h3>
+      <p>Sua empresa tem convênio com a Connect Gym? Garanta musculação livre com valor exclusivo.</p>
+    </div>
+    <p class="convenio-price"><span>R$</span>94<span>,90</span></p>
+  </div>
+</section>
+
+<!-- HORARIOS -->
+<section class="section section-dark" id="horarios">
+  <div class="section-head">
+    <p class="eyebrow">Horários</p>
+    <h2>Horário de atendimento</h2>
+  </div>
+  <div class="hours-grid">
+    <div class="hours-card">
+      <h3>Segunda a Sexta</h3>
+      <p class="hours-time">5h às 22h</p>
+    </div>
+    <div class="hours-card">
+      <h3>Sábado</h3>
+      <p class="hours-time">7h30 às 14h</p>
+    </div>
+    <div class="hours-card">
+      <h3>Domingo</h3>
+      <p class="hours-time">9h às 12h</p>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section class="section section-dark" id="equipe">
+  <div class="section-head">
+    <p class="eyebrow">Nossa equipe</p>
+    <h2>Quem faz a Connect Gym acontecer</h2>
+  </div>
+  <div class="team-grid">
+    <img src="equipe.jpg" alt="Equipe Connect Gym reunida em frente à academia" class="team-photo">
+    <p class="team-text">
+      Por trás de cada treino tem gente que se importa de verdade com o seu
+      resultado. Nossa equipe de professores e colaboradores está presente
+      todos os dias pra te acompanhar, ajustar seu treino e comemorar cada
+      conquista junto com você.
+    </p>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="section" id="depoimentos">
+  <div class="section-head">
+    <p class="eyebrow">Quem já treina com a gente</p>
+    <h2>Resultado de quem entrou na rede</h2>
+  </div>
+  <div class="testimonials">
+    <blockquote class="testimonial">
+      <p>"Em 8 meses de Connect eu não mudei só o corpo, mudei a rotina inteira. A galera daqui puxa a gente pra cima."</p>
+      <cite>— Marcos A., aluno há 2 anos</cite>
+    </blockquote>
+    <blockquote class="testimonial">
+      <p>"Os professores sabem meu nome e meu treino de cor. Isso muda tudo na hora de não faltar."</p>
+      <cite>— Fernanda L., plano Connect</cite>
+    </blockquote>
+    <blockquote class="testimonial">
+      <p>"Comecei sem nunca ter pisado numa academia. Hoje treino crossfit 4x por semana e virei outra pessoa."</p>
+      <cite>— Diego S., plano Premium</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="section section-dark" id="contato">
+  <div class="section-head">
+    <p class="eyebrow">Contato</p>
+    <h2>Bora conectar seu primeiro treino?</h2>
+  </div>
+  <div class="contact-grid">
+    <form class="contact-form" id="contactForm">
+      <label>
+        Nome
+        <input type="text" name="nome" required placeholder="Seu nome completo">
+      </label>
+      <label>
+        WhatsApp
+        <input type="tel" name="whatsapp" required placeholder="(48) 9 9999-9999">
+      </label>
+      <label>
+        Mensagem
+        <textarea name="mensagem" rows="4" placeholder="Quero saber mais sobre os planos..."></textarea>
+      </label>
+      <button type="submit" class="btn btn-accent">Enviar mensagem</button>
+      <p class="form-status" id="formStatus" role="status"></p>
+    </form>
+    <div class="contact-info">
+      <div>
+        <h3>Endereço</h3>
+        <p class="placeholder-note">R. Angélica Colodel Bettiol, 59 - Centro, Urussanga - SC, 88840-000</p>
+      </div>
+      <div>
+        <h3>Horário de atendimento</h3>
+        <p>Seg a Sex: 5h às 22h<br>Sábado: 7h30 às 14h<br>Domingo: 9h às 12h</p>
+      </div>
+      <div>
+        <h3>Fale direto</h3>
+        <p class="placeholder-note">(48) 99628-7083</p>
+        <p><a href="https://www.instagram.com/connectgym_" target="_blank" rel="noopener">@connectgym_</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="node-divider node-divider-footer" aria-hidden="true"></div>
+  <p class="logo footer-logo">CONNECT<span>·</span>GYM</p>
+  <p class="footer-links"><a href="https://www.instagram.com/connectgym_" target="_blank" rel="noopener">Instagram @connectgym_</a></p>
+  <p class="footer-note">© 2026 Connect Gym. Todos os direitos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
